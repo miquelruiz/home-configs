@@ -1,0 +1,6 @@
+# Don't want my eyes bleeding, thanks
+vbell off
+
+# Get scrolling in Putty
+termcapinfo xterm te@:ti@
+
