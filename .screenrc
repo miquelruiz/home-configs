@@ -4,3 +4,6 @@ vbell off
 # Get scrolling in Putty
 termcapinfo xterm te@:ti@
 
+# don't display the copyright page
+startup_message off
+
