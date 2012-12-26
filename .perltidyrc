@@ -1,0 +1,11 @@
+# Cuddled else
+-ce
+
+# Stack Opening and closing tokens
+-sot -sct
+
+# Horizontal tightness
+-pt=2
+
+# For loop semicolon spaces
+-nsfs
