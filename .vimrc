@@ -7,6 +7,7 @@ set ruler
 " syntax highlighting
 set bg=dark
 syntax on
+colorscheme kraihlight
 
 " autoindent
 set autoindent
