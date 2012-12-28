@@ -105,3 +105,5 @@ fi
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
+# for tmux: export 256color
+[ -n "$TMUX" ] && export TERM=screen-256color
