@@ -9,6 +9,9 @@ set bg=dark
 syntax on
 colorscheme kraihlight
 
+" colored column at character 80
+set colorcolumn=80
+
 " autoindent
 set autoindent
 set smartindent
