@@ -1,5 +1,7 @@
-" incremental search
+" incremental search, case insensitive when using lower
 set incsearch
+set ignorecase
+set smartcase
 
 " show bar with cursor position
 set ruler
@@ -92,3 +94,11 @@ vnoremap <silent> _d :!perl -MO=Deparse 2>/dev/null<cr>
 
 " reopen file at last-edited position
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" move up and down always one line
+nmap j gj
+nmap k gk
+
+"This is for setting Makefiles with tabs not spaces
+autocmd FileType make setlocal noexpandtab
+
