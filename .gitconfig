@@ -1,14 +1,19 @@
+[core]
+    editor = /usr/bin/vim
+[push]
+    default = simple
 [user]
-	name = Miquel Ruiz
-	email = mruiz@cpan.org
+    name = Miquel Ruiz
+    email = mruiz@cpan.org
 [color]
-	ui = always
+    ui = always
 [github]
-	user = miquelruiz
-	token = 
+    user = miquelruiz
+    token =
 [alias]
     ci = commit
     co = checkout
     st = status
     df = diff
     br = branch
+    idx = diff --cached
