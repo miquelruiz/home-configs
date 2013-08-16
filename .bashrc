@@ -98,13 +98,6 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# Perlbrew stuff
-if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
-    source ~/perl5/perlbrew/etc/bashrc
-elif [ -d ~/perl5 ]; then
-    eval $(perl -Mlocal::lib)
-fi
-
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 # for tmux: export 256color
