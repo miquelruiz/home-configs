@@ -1,0 +1,5 @@
+xterm*termName: xterm-256color
+xterm*saveLines: 4096
+xterm*allowBoldFonts: false
+*foreground: rgb:d2/d2/d2
+*background: rgb:08/08/08
