@@ -102,3 +102,7 @@ nmap k gk
 "This is for setting Makefiles with tabs not spaces
 autocmd FileType make setlocal noexpandtab
 
+" ruby indented with two spaces
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
+autocmd FileType ruby set softtabstop=2
