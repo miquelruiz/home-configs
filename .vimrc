@@ -18,6 +18,9 @@ set colorcolumn=80
 set autoindent
 set smartindent
 
+" don't make a # force column 0
+inoremap # X<BS>#
+
 " 4 space tabs
 set tabstop=4
 set shiftwidth=4
