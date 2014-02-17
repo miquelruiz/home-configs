@@ -102,6 +102,9 @@ nmap k gk
 "This is for setting Makefiles with tabs not spaces
 autocmd FileType make setlocal noexpandtab
 
+" Start pathogen plugin manager
+execute pathogen#infect()
+
 " ruby indented with two spaces
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
