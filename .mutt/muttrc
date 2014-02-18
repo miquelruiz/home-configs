@@ -1,0 +1,30 @@
+# IMAP stuff
+set imap_user=
+set imap_pass=
+set folder=imaps://SERVER/
+set spoolfile=+INBOX
+
+# Let mutt open connections
+unset imap_passive
+set imap_keepalive=300
+set mail_check=60
+
+# check for new mails in all folders
+set imap_check_subscribed
+
+# SMTP stuff
+set smtp_url=smtp://$imap_user:$imap_pass@SERVER:PORT
+set ssl_force_tls=yes
+set send_charset="utf-8"
+
+# Copy sent messages to this folder
+set record=+Sent
+
+# Cache things
+set header_cache=~/.cache/mutt
+set message_cachedir=~/.cache/mutt
+
+# colors!
+source ~/.mutt/colors.linux
+
+set sort=threads
