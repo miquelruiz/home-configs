@@ -115,3 +115,6 @@ execute pathogen#infect()
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby set softtabstop=2
+
+" No limits in what can be stored in viminfo file
+set viminfo='100,h
