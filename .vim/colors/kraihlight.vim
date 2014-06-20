@@ -62,7 +62,7 @@ hi Question guifg=#f9f9f9 guibg=NONE gui=NONE ctermfg=254
 
  
 
-hi Comment guifg=#726d73 gui=italic ctermfg=240
+hi Comment guifg=#726d73 gui=italic ctermfg=140
 
 hi String guifg=#9fac7f ctermfg=150
 
