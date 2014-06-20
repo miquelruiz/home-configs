@@ -1,7 +1,5 @@
 [core]
     editor = /usr/bin/vim
-[push]
-    default = simple
 [user]
     name = Miquel Ruiz
     email = mruiz@cpan.org
