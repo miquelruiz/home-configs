@@ -18,14 +18,16 @@ autoload -Uz vcs_info
 setopt PROMPT_SUBST
 zstyle ':vcs_info:*' enable git hg svn
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git*' formats "%{${fg[cyan]}%}[%{${fg[green]}%}%s%{${fg[cyan]}%}][%{${fg[blue]}%}%r/%S%%{${fg[cyan]}%}][%{${fg[blue]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[cyan]}%}]%{$reset_color%}"
-
+zstyle ':vcs_info:*' actionformats ' %F{5}(%F{2}%b%F{3}|%F{1}%a%F{5})%f'
+zstyle ':vcs_info:*' formats       ' %F{5}(%F{2}%b%F{3}%m%u%c%F{5})%f'
+zstyle ':vcs_info:*' unstagedstr   ' *'
+zstyle ':vcs_info:*' stagedstr     '+'
 
 precmd() { vcs_info }
 
 # Prompt tunning ($? user@host:path) after loading modules
-PS1="%B%F{red}%(?..%? )%f%b%n@%m:%~%# "
-RPROMPT=$'${vcs_info_msg_0_}'
+PS1='%B%F{red}%(?..%? )%f%b%n@%m:%~${vcs_info_msg_0_}%(!.#.$) '
+#RPROMPT=$'${vcs_info_msg_0_}'
 
 # ZLE in vi mode
 bindkey -v
