@@ -23,11 +23,24 @@ zstyle ':vcs_info:*' formats       ' %F{5}(%F{2}%b%F{3}%m%u%c%F{5})%f'
 zstyle ':vcs_info:*' unstagedstr   ' *'
 zstyle ':vcs_info:*' stagedstr     '+'
 
-precmd() { vcs_info }
 
-# Prompt tunning ($? user@host:path) after loading modules
-PS1='%B%F{red}%(?..%? )%f%b%n@%m:%~${vcs_info_msg_0_}%(!.#.$) '
-#RPROMPT=$'${vcs_info_msg_0_}'
+setup_prompt() {
+    local last_exit base vcs post
+    # show last command exit code in red
+    last_exit='%B%F{red}%(?..%? )%f%b'
+    # user@host:path
+    base='%n@%m:%~'
+    # info about current dir vcs
+    vcs='${vcs_info_msg_0_}'
+    # shows # if root, $ elsewhere
+    post='%(!.#.$) '
+
+    PS1="${last_exit}${base}${vcs}${post}"
+    #RPROMPT=$'${vcs_info_msg_0_}'
+}
+setup_prompt
+
+precmd() { vcs_info }
 
 # ZLE in vi mode
 bindkey -v
