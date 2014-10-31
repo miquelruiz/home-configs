@@ -4,21 +4,3 @@ xterm*allowBoldFonts: false
 xterm*selectToClipboard: true
 *foreground: rgb:d2/d2/d2
 *background: rgb:08/08/08
-
-! No bold font
-URxvt*boldFont:
-
-! Transparency
-URxvt*depth: 32
-URxvt.background: [10]#000000
-
-! No scrollbar
-URxvt*scrollBar: false
-
-! Clickable urls
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
-
-! Lighter blue
-URxvt*color4: CornflowerBlue
