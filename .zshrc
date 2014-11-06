@@ -23,6 +23,8 @@ zstyle ':vcs_info:*' formats       ' %F{5}(%F{2}%b%F{3}%m%u%c%F{5})%f'
 zstyle ':vcs_info:*' unstagedstr   ' *'
 zstyle ':vcs_info:*' stagedstr     '+'
 
+# add a slash when autocompleting special dirs
+zstyle ':completion:*' special-dirs true
 
 setup_prompt() {
     local last_exit base vcs post
@@ -78,6 +80,9 @@ alias l='ls -CF'
 alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
 alias cal='cal -m'
 alias tmux='tmux -2'
+alias cmount='mount | column -t'
+alias feh='feh --scale-down'
 
 # Useful environment
 export EDITOR='vim'
+export EMAIL='self@miquelruiz.net'
