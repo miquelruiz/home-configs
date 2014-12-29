@@ -2,5 +2,6 @@ xterm*termName: xterm-256color
 xterm*saveLines: 4096
 xterm*allowBoldFonts: false
 xterm*selectToClipboard: true
+xterm*faceName: terminus
 *foreground: rgb:d2/d2/d2
 *background: rgb:08/08/08
