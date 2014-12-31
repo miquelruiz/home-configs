@@ -181,6 +181,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # Floating gorilla
 for_window [class="Gorilla"] floating enable
 for_window [class="Main.tcl"] floating enable
+for_window [class="Toplevel"] floating enable
 
 # Lock screen
 bindsym $mod+z exec i3lock -t -e -d -i /home/mruiz/Pictures/blank.png
