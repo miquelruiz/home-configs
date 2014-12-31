@@ -182,4 +182,10 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 for_window [class="Gorilla"] floating enable
 for_window [class="Main.tcl"] floating enable
 
-bindsym $mod+z exec i3lock -d -i /home/mruiz/Pictures/blank.png
+# Lock screen
+bindsym $mod+z exec i3lock -t -e -d -i /home/mruiz/Pictures/blank.png
+
+# Bind some apps to specific workspaces
+assign [class="Firefox"] $tag2
+assign [class="Thunderbird"] $tag3
+assign [class="Rhythmbox"] $tag5
