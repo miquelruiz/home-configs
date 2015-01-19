@@ -96,8 +96,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -d ~/bin ]; then
+    export PATH=~/bin:$PATH
+fi
+
 . /usr/share/git/completion/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-export TERM=xterm-256color
 export EDITOR=/usr/bin/vim
