@@ -187,7 +187,7 @@ for_window [class="Main.tcl"] floating enable
 for_window [class="Toplevel"] floating enable
 
 # Lock screen
-bindsym $mod+z exec i3lock -t -e -d -i /home/mruiz/Pictures/blank.png
+bindsym $mod+z exec i3lock -t -e -d -c 000000
 
 # Bind some apps to specific workspaces
 assign [class="Firefox"] $tag2
