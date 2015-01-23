@@ -165,7 +165,7 @@ bar {
 }
 
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-center ~/.wallpaper
+exec --no-startup-id set-wallpaper
 exec --no-startup-id udiskie --tray
 
 # Volume keys
