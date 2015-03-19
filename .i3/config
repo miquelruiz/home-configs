@@ -165,7 +165,7 @@ bar {
 }
 
 exec --no-startup-id nm-applet
-exec --no-startup-id set-wallpaper
+exec --no-startup-id bash /home/mruiz/bin/set-wallpaper
 exec --no-startup-id udiskie --tray
 
 # Volume keys
