@@ -193,3 +193,7 @@ bindsym $mod+z exec i3lock -t -e -d -c 000000
 assign [class="Firefox"] $tag2
 assign [class="Thunderbird"] $tag3
 assign [class="Rhythmbox"] $tag5
+
+# move workspaces around
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
