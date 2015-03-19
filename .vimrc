@@ -111,10 +111,13 @@ autocmd FileType make setlocal noexpandtab
 " Start pathogen plugin manager
 execute pathogen#infect()
 
-" ruby indented with two spaces
+" ruby and go indented with two spaces
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby set softtabstop=2
+autocmd FileType go set tabstop=2
+autocmd FileType go set shiftwidth=2
+autocmd FileType go set softtabstop=2
 
 " No limits in what can be stored in viminfo file
 set viminfo='100,h
