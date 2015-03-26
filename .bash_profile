@@ -18,6 +18,6 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# start an SSH agent
-eval $(ssh-agent)
+# start an SSH agent. Not needed if using pam_ssh properly
+#eval $(ssh-agent)
 
