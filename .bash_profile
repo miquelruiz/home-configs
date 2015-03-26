@@ -9,6 +9,9 @@ if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
     source ~/perl5/perlbrew/etc/bashrc
 elif [ -d ~/perl5 ]; then
     eval $(perl -Mlocal::lib)
+elif [ -d ~/.plenv ]; then
+    export PATH="$HOME/.plenv/bin:$PATH"
+    eval "$(plenv init -)"
 fi
 
 # rvm stuff
