@@ -21,3 +21,6 @@ fi
 # start an SSH agent. Not needed if using pam_ssh properly
 #eval $(ssh-agent)
 
+# Go stuff
+export GOROOT=$HOME/golang/go
+export PATH=$PATH:$GOROOT/bin
