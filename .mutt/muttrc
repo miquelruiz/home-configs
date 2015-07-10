@@ -1,6 +1,7 @@
 # IMAP stuff
 set imap_user=
 set imap_pass=
+# Be sure to use the same domain than in your cert if using imaps
 set folder=imaps://SERVER/
 set spoolfile=+INBOX
 
@@ -23,6 +24,7 @@ set record=+Sent
 # Cache things
 set header_cache=~/.cache/mutt
 set message_cachedir=~/.cache/mutt
+set certificate_file=~/.mutt/mutt_certificates
 
 # colors!
 source ~/.mutt/colors.linux
