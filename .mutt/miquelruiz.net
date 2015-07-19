@@ -1,0 +1,11 @@
+# IMAP stuff
+set imap_user=
+set imap_pass=
+# Be sure to use the same domain name than the one in your certificate
+set folder=imaps://SERVER:993
+set spoolfile=+INBOX
+
+# SMTP stuff
+set smtp_url=smtp://$imap_user:$imap_pass@:587
+set ssl_force_tls=yes
+set send_charset="utf-8"
