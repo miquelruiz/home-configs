@@ -165,14 +165,16 @@ bar {
 }
 
 exec --no-startup-id nm-applet
-exec --no-startup-id bash /home/mruiz/bin/set-wallpaper
+exec --no-startup-id bash /home/mruiz/bin/set-wallpaper -r
 exec --no-startup-id udiskie --tray
 
 # Volume keys
 bindsym XF86AudioMute exec pulseaudio-ctl mute
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+#bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+#bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 
 # Print screen
 bindsym Print exec scrot
@@ -190,10 +192,21 @@ for_window [class="Toplevel"] floating enable
 bindsym $mod+z exec i3lock -t -e -d -c 000000
 
 # Bind some apps to specific workspaces
-assign [class="Firefox"] $tag2
+assign [class="Firefox"] $tag3
+assign [class="chromium"] $tag2
 assign [class="Thunderbird"] $tag3
 assign [class="Rhythmbox"] $tag5
+assign [class="Clementine"] $tag5
 
 # move workspaces around
 bindsym $mod+Ctrl+Right move workspace to output right
 bindsym $mod+Ctrl+Left move workspace to output left
+
+mode "moveit" {
+    bindsym Up move up 20px
+    bindsym Left move left 20px
+    bindsym Down move down 20px
+    bindsym Right move right 20px
+    bindsym Mod4+m mode "default"
+}
+bindsym $mod+m focus floating; mode "moveit"
