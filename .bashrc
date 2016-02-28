@@ -103,5 +103,6 @@ fi
 
 . /usr/share/git/completion/git-prompt.sh
 
+set -o vi
 export GIT_PS1_SHOWDIRTYSTATE=1
 export EDITOR=/usr/bin/vim
