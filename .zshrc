@@ -31,7 +31,7 @@ setup_prompt() {
     # show last command exit code in red
     last_exit='%B%F{red}%(?..%? )%f%b'
     # user@host:path
-    base='%n@%m:%~'
+    base='%F{046}%n@%m%f:%F{012}%~%f'
     # info about current dir vcs
     vcs='${vcs_info_msg_0_}'
     # shows # if root, $ elsewhere
