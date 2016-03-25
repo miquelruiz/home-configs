@@ -1,0 +1,3 @@
+#/bin/bash
+
+sed -i 's_inode/directory=easytag.desktop;Thunar-folder-handler.desktop;_inode/directory=Thunar-folder-handler.desktop;_' /usr/share/applications/mimeinfo.cache
