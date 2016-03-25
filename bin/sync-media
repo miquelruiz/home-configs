@@ -18,8 +18,6 @@ ACTIONS = [UP, DOWN]
 LOCAL = '/home/mruiz/Music/.'
 RSYNC = '/usr/bin/rsync'
 OPTIONS = '-av'
-DELETE = '--delete'
-LIMIT = '--bwlimit='
 
 CMD = [RSYNC, OPTIONS]
 
@@ -49,17 +47,12 @@ def main():
                         type=valid_action)
     parser.add_argument('target', help="Target host: " + hosts(),
                         type=valid_host)
-    parser.add_argument('--limit', help="Bandwidth limit in KB")
-    parser.add_argument('--delete', action='store_true', default=False)
     parser.add_argument('--dry-run', action='store_true', default=False)
-    args = parser.parse_args()
+    args, rsync_args = parser.parse_known_args()
 
     cmd = copy.copy(CMD)
-    if args.delete:
-        cmd.append(DELETE)
-
-    if args.limit is not None:
-        cmd.append(LIMIT + args.limit)
+    if rsync_args:
+        cmd.extend(rsync_args)
 
     if args.action == UP:
         cmd.extend((LOCAL, HOSTS[args.target]))
