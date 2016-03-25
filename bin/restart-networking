@@ -1,0 +1,17 @@
+#!/bin/bash
+
+sudo systemctl stop NetworkManager
+sudo systemctl stop wpa_supplicant
+
+sudo rmmod iwlmvm
+sudo rmmod mac80211
+sudo rmmod iwlwifi
+sudo rmmod cfg80211
+
+sudo modprobe cfg80211
+sudo modprobe iwlwifi
+sudo modprobe mac80211
+sudo modprobe iwlmvm
+
+sudo systemctl start wpa_supplicant
+sudo systemctl start NetworkManager
