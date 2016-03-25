@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Reset in case getopts has been used previously in the shell.
+OPTIND=1
+random=0
+
+while getopts "r" opt; do
+    case "$opt" in
+    r)  random=1
+        ;;
+    esac
+done
+
+shift $((OPTIND-1))
+
+if [ $random -eq 1 ]; then
+    file="$(find ~/Pictures/wallpapers/ -type f | sort -R | head -n1)"
+elif [ "$1" ]; then
+    file="$(pwd)/$1"
+else
+    donothing=1
+fi
+
+if [ ! $donothing ]; then
+    if [ -f "$file" ]; then
+        rm ~/.wallpaper;
+        ln -s "$file" ~/.wallpaper
+    else
+        echo "Can't open '$file'"
+        exit 1;
+    fi
+fi
+
+if [ -L ~/.wallpaper ]; then
+    feh --bg-fill ~/.wallpaper
+fi
