@@ -28,18 +28,16 @@ def hosts():
     return ', '.join(HOSTS.keys())
 
 def valid_host(host):
-    if host in HOSTS:
-        return host
-    else:
+    if host not in HOSTS:
         msg = "Unknown host: '{}'\nValid ones: {}".format(host, hosts())
         raise argparse.ArgumentTypeError(msg)
+    return host
 
 def valid_action(action):
-    if action in ACTIONS:
-        return action
-    else:
+    if action not in ACTIONS:
         msg = "Unknown action: '{}'\nValid ones: {}".format(action, actions())
         raise argparse.ArgumentTypeError(msg)
+    return action
 
 def main():
     parser = argparse.ArgumentParser()
