@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+    cmd=`basename $0`
+    echo "Usage: $cmd LAYOUT"
+    exit 1
+fi
+
+layout_file="$HOME/.screenlayout/$1.sh"
+
+if [ ! -f $layout_file ]; then
+    echo "Layout $1 does not exist"
+    exit 1
+else
+    echo "sourcing $layout_file"
+    source $layout_file
+fi
+
+set-wallpaper
