@@ -1,0 +1,79 @@
+#!/usr/bin/env python
+
+import argparse
+import copy
+import subprocess
+import sys
+
+
+HOSTS = {
+    'arrakis': 'arrakis:/media/LaCIE/MUSIC/miquel/.',
+    'miquelruiz': 'miquelruiz.net:/srv/music/.',
+}
+
+UP = 'up'
+DOWN = 'down'
+ACTIONS = [UP, DOWN]
+
+LOCAL = '/home/mruiz/Music/.'
+RSYNC = '/usr/bin/rsync'
+OPTIONS = '-av'
+DELETE = '--delete'
+LIMIT = '--bwlimit='
+
+CMD = [RSYNC, OPTIONS]
+
+def actions():
+    return ', '.join(ACTIONS)
+
+def hosts():
+    return ', '.join(HOSTS.keys())
+
+def valid_host(host):
+    if host in HOSTS:
+        return host
+    else:
+        msg = "Unknown host: '{}'\nValid ones: {}".format(host, hosts())
+        raise argparse.ArgumentTypeError(msg)
+
+def valid_action(action):
+    if action in ACTIONS:
+        return action
+    else:
+        msg = "Unknown action: '{}'\nValid ones: {}".format(action, actions())
+        raise argparse.ArgumentTypeError(msg)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('action', help="Action: " + actions(),
+                        type=valid_action)
+    parser.add_argument('target', help="Target host: " + hosts(),
+                        type=valid_host)
+    parser.add_argument('--limit', help="Bandwidth limit in KB")
+    parser.add_argument('--delete', action='store_true', default=False)
+    parser.add_argument('--dry-run', action='store_true', default=False)
+    args = parser.parse_args()
+
+    cmd = copy.copy(CMD)
+    if args.delete:
+        cmd.append(DELETE)
+
+    if args.limit is not None:
+        cmd.append(LIMIT + args.limit)
+
+    if args.action == UP:
+        cmd.extend((LOCAL, HOSTS[args.target]))
+
+    elif args.action == DOWN:
+        cmd.extend((HOSTS[args.target], LOCAL))
+
+    else:
+        raise Exception("Unknown action '{}'".format(args.action))
+
+    if args.dry_run:
+        print(cmd)
+    else:
+        subprocess.run(cmd, stdout=sys.stdout, stderr=sys.stderr)
+
+if __name__ == '__main__':
+    main()
