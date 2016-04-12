@@ -89,6 +89,10 @@ let perl_include_pod = 1
 " syntax color complex things like @{${"foo"}}
 let perl_extended_vars = 1
 
+" perl subroutine signatures, biatch
+let perl_sub_signatures = 1
+let perl_no_subprototype_error = 1
+
 " Tidy selected lines (or entire file) with _t:
 nnoremap <silent> _t :%!perltidy -q<Enter>
 vnoremap <silent> _t :!perltidy -q<Enter>
@@ -118,6 +122,11 @@ autocmd FileType ruby set softtabstop=2
 autocmd FileType go set tabstop=2
 autocmd FileType go set shiftwidth=2
 autocmd FileType go set softtabstop=2
+
+
+autocmd FileType html set tabstop=4
+autocmd FileType html set noexpandtab
+
 
 " No limits in what can be stored in viminfo file
 set viminfo='100,h
