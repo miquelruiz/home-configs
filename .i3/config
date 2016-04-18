@@ -206,6 +206,8 @@ assign [title="irssi"] $tag4
 # move workspaces around
 bindsym $mod+Ctrl+Right move workspace to output right
 bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Up move workspace to output up
+bindsym $mod+Ctrl+Down move workspace to output down
 
 mode "moveit" {
     bindsym Up move up 20px
