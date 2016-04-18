@@ -167,6 +167,10 @@ bar {
 exec --no-startup-id nm-applet
 exec --no-startup-id bash /home/mruiz/bin/set-wallpaper -r
 exec --no-startup-id udiskie --tray
+exec --no-startup-id urxvt
+exec --no-startup-id firefox
+exec --no-startup-id urxvt -e irssi
+#exec --no-startup-id xmodmap /home/mruiz/.speedswapper
 
 # Volume keys
 bindsym XF86AudioMute exec pulseaudio-ctl mute
