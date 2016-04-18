@@ -196,11 +196,12 @@ for_window [class="Toplevel"] floating enable
 bindsym $mod+z exec i3lock -t -e -d -c 000000
 
 # Bind some apps to specific workspaces
-assign [class="Firefox"] $tag3
+assign [class="Firefox"] $tag2
 assign [class="chromium"] $tag2
 assign [class="Thunderbird"] $tag3
 assign [class="Rhythmbox"] $tag5
 assign [class="Clementine"] $tag5
+assign [title="irssi"] $tag4
 
 # move workspaces around
 bindsym $mod+Ctrl+Right move workspace to output right
