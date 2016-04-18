@@ -96,7 +96,7 @@ bindsym $mod+a focus parent
 # Name the workspaces
 set $tag1 "1: term"
 set $tag2 "2: www"
-set $tag3 "3: mail"
+set $tag3 "3: term"
 set $tag4 "4: irc"
 set $tag5 "5: music"
 
