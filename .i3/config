@@ -216,4 +216,5 @@ mode "moveit" {
 }
 bindsym $mod+m focus floating; mode "moveit"
 
-
+# have a window on all workspaces
+bindsym $mod+t sticky toggle
