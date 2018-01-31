@@ -1,12 +1,17 @@
-xterm*termName: xterm-256color
+!xterm*termName: xterm-256color
 xterm*saveLines: 4096
 xterm*allowBoldFonts: false
 xterm*selectToClipboard: true
 xterm*faceName: terminus
 *foreground: rgb:d2/d2/d2
 *background: rgb:08/08/08
-URxvt.font: xft:terminus:size=14:antialias=false
-URxvt.boldFont:
+! URxvt.font: xft:monospace:size=14
+!URxvt*font: xft:Terminus:size=14:antialias=false
+
+URxvt.font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-terminus-bold-*-*-*-20-*-*-*-*-*-*
+URxvt*boldFont:
+
 URxvt.color12: rgb:5c/5c/ff
 URxvt.scrollBar: false
 URxvt*.transparent: true
@@ -17,3 +22,5 @@ URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.urgentOnBell: true
+URxvt.clipboard.autocopy: true
+URxvt.termName: rxvt-256color
