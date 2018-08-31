@@ -109,3 +109,16 @@ export GIT_PS1_SHOWCOLORHINTS=1
 set -o vi
 export GIT_PS1_SHOWDIRTYSTATE=1
 export EDITOR=/usr/bin/vim
+
+# ssh-agent stuff since WSL doesn't use login shells
+if [ -z "$(pgrep ssh-agent)" ]; then
+    rm -rf /tmp/ssh-*
+    eval $(ssh-agent -s) > /dev/null
+else
+    export SSH_AGENT_PID=$(pgrep ssh-agent)
+    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name "agent.*")
+fi
+
+if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
+    ssh-add
+fi
