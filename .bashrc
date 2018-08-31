@@ -104,7 +104,7 @@ if [ -d ~/bin ]; then
 fi
 
 export GIT_PS1_SHOWCOLORHINTS=1
-. /usr/share/git/completion/git-prompt.sh
+. /etc/bash_completion
 
 set -o vi
 export GIT_PS1_SHOWDIRTYSTATE=1
