@@ -24,3 +24,5 @@ fi
 # Go stuff
 export GOROOT=$HOME/golang/go
 export PATH=$PATH:$GOROOT/bin
+
+export PATH="$HOME/.cargo/bin:$PATH"
