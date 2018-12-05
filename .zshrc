@@ -46,6 +46,7 @@ precmd() { vcs_info }
 
 # ZLE in vi mode
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 # This is required to make Home/End/Delete keys work properly
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
@@ -77,7 +78,6 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
 alias cal='cal -m'
 alias tmux='tmux -2'
 alias cmount='mount | column -t'
