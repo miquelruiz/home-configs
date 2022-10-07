@@ -18,11 +18,24 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# start an SSH agent. Not needed if using pam_ssh properly
-#eval $(ssh-agent)
-
 # Go stuff
-export GOROOT=$HOME/golang/go
-export PATH=$PATH:$GOROOT/bin
+export GOROOT="$HOME/go"
+export GOPATH="$HOME/workspace/go"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
-export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add stuff to the PATH
+export PATH="~/bin:~/.local/bin:~/.cargo/bin:$PATH"
+
+
+# Use the gpg-agent as ssh-agent
+if [ -z "$(pgrep gpg-agent)" ]; then
+    eval $(gpg-agent --daemon --enable-ssh-support)
+else
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+
+if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
+    ssh-add
+fi
+
